@@ -20,13 +20,10 @@ if __name__ == "__main__":
             print(file)
             s_frame = 420
             e_frame = 2370
-            all_frames_bounds = blurring_utils.find_all(video_path=file_path,
-                                         darknet_model=coco_net,
-                                         thresh=0.1,
-                                         class_label=['car', 'person', 'motorbike',
-                                                      'truck', 'bus'],
-                                         start_frame=s_frame,
-                                         end_frame=e_frame)
+            all_frames_bounds = blurring_utils.find_all(video_path=file_path, darknet_model=coco_net, thresh=0.1,
+                                                        class_labels=['car', 'person', 'motorbike',
+                                                                      'truck', 'bus'], start_frame=s_frame,
+                                                        end_frame=e_frame)
 
             blurring_utils.blur_the_video(video_path=file_path,
                                           output_path=file_output_path,
